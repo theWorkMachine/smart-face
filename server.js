@@ -32,9 +32,7 @@ app.use(cors())
 
 
 //diplaying root element or homepage 
-app.get('/', (req, res) => {
-    res.send(database.users)
-})
+app.get('/', (req, res) => {res.send('it is working')})
 
 //sign in request
 app.post('/signin', (req, res) => {signIn.handleSignIn(req, res, db, bcrypt)})
@@ -55,8 +53,8 @@ app.put('/image', (req, res) => {image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
 
-app.listen(3002, () => {
-    console.log('app is working on port 3002')
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app is working on port 3002 ${process.env.PORT}`)
 })
 
 
