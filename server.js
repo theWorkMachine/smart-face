@@ -28,7 +28,7 @@ const app = express();
 
 //middleware to convert text to json
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 
 //diplaying root element or homepage 
@@ -56,6 +56,5 @@ app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 app.listen(process.env.PORT || 3000, () => {
     console.log(`app is working on port ${process.env.PORT}`)
 })
-
 
 
